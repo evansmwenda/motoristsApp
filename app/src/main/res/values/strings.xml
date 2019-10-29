@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Carfix</string>
+    <string name="usrpass">Password</string>
+    <string name="usremail">Email Address</string>
+    <string name="usrphone">Phone Number</string>
+    <string name="usrconfirmpass">Confirm Password</string>
+    <string name="usrcompanyname">Company Name</string>
 </resources>

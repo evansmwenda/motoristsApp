@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Accounts.RegisterActivity">
+    tools:context=".Accounts.RegisterTowActivity">
 
     <ImageView
         android:id="@+id/imageView3"
@@ -15,6 +15,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/carfix" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/wrapper_fullname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="#033F63"
+        android:hint="@string/usrcompanyname"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        android:textColorHint="#033F63">
+
+        <EditText
+            android:id="@+id/editFullName"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:ems="10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/wrapper_email"
@@ -27,19 +50,17 @@
         android:hint="@string/usremail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:theme="@style/MyEditFields"
+        app:layout_constraintTop_toBottomOf="@+id/wrapper_fullname"
         android:textColorHint="#033F63">
 
         <EditText
             android:id="@+id/editEmail"
-            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_width="match_parent"
             android:ems="10"
-            android:inputType="textWebEmailAddress"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:autofillHints="true" />
+            />
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -52,7 +73,6 @@
         app:passwordToggleEnabled="true"
         app:passwordToggleTint="#033F63"
         android:hint="@string/usrphone"
-        app:theme="@style/MyEditFields"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/wrapper_email"
@@ -82,7 +102,6 @@
         android:hint="@string/usrpass"
         android:layout_marginEnd="@dimen/activity_horizontal_margin"
         app:layout_constraintEnd_toEndOf="parent"
-        app:theme="@style/MyEditFields"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/wrapper_phone"
         android:textColorHint="#033F63">
@@ -114,7 +133,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/wrapper_password"
-        app:theme="@style/MyEditFields"
         android:textColorHint="#033F63">
 
         <EditText

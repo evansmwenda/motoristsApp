@@ -8,4 +8,8 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="MyEditFields">
+        <item name="colorAccent">@color/appColor</item>
+    </style>
+
 </resources>

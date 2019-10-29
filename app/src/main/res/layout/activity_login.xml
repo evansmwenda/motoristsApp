@@ -14,65 +14,67 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/ic_launcher_round" />
+        app:srcCompat="@drawable/carfix" />
 
-    <EditText
-        android:id="@+id/editEmail"
-        android:layout_height="wrap_content"
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/wrapper_email"
         android:layout_width="match_parent"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginRight="30dp"
-        android:ems="10"
-        android:hint="Email Address"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
-
-
-    <EditText
-        android:id="@+id/editPassword"
         android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginRight="30dp"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPassword"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="#033F63"
+        android:hint="@string/usremail"
         app:layout_constraintEnd_toEndOf="parent"
+        app:theme="@style/MyEditFields"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        android:textColorHint="#033F63">
+
+        <EditText
+            android:id="@+id/editEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textWebEmailAddress"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/wrapper_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="#033F63"
+        android:hint="@string/usrpass"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginRight="30dp"
-        app:layout_constraintTop_toBottomOf="@+id/editPassword"
-        app:passwordToggleEnabled="true"
-        app:passwordToggleTint="@android:color/holo_blue_dark"
-        >
+        app:layout_constraintTop_toBottomOf="@+id/wrapper_email"
+        app:theme="@style/MyEditFields"
+        android:textColorHint="#033F63">
 
         <EditText
-            android:id="@+id/editName"
+            android:id="@+id/usrpass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawablePadding="10dp"
-            android:hint="evansmwenda"
-            android:inputType="textPersonName" />
-
+            android:textStyle="bold"
+            android:textColorHint="#033F63"
+            android:ems="10"
+            app:backgroundTint="#033F63"
+            android:textColor="#033F63"
+            android:inputType="textPassword"
+            android:importantForAutofill="noExcludeDescendants"
+            android:textSize="15sp"
+            tools:targetApi="o" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -91,7 +93,10 @@
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_marginTop="8dp"
-        android:text="Not a member ? Register"
+        android:text="Or Register"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="goToRegister"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonRegister" />
