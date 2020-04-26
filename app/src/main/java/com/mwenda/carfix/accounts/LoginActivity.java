@@ -1,4 +1,4 @@
-package com.mwenda.carfix.Accounts;
+package com.mwenda.carfix.accounts;
 
 import android.content.Intent;
 import android.content.SharedPreferences;

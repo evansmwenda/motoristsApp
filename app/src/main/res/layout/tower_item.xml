@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <RelativeLayout
+        android:id="@+id/rela3"
+        android:layout_width="wrap_content"
+        android:layout_height="120dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="10dp"
+        >
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardTowing"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:innerRadius="0dp"
+            android:clipToPadding="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardCornerRadius="1dp"
+            app:cardPreventCornerOverlap="true"
+            android:backgroundTint="#ff9800"
+            app:cardElevation="5dp"
+            app:cardMaxElevation="5dp"
+            tools:targetApi="lollipop">
+
+
+
+
+
+            <TextView
+                android:id="@+id/tvcompany_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="85dp"
+                android:layout_marginTop="20dp"
+                android:autoSizeMaxTextSize="100sp"
+                android:autoSizeMinTextSize="12sp"
+                android:autoSizeStepGranularity="2sp"
+                android:autoSizeTextType="uniform"
+                android:text="@string/company_name"
+                android:textColor="#033F63"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                tools:targetApi="o" />
+
+            <TextView
+                android:id="@+id/tvcompany_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="85dp"
+                android:layout_marginTop="60dp"
+                android:autoSizeMaxTextSize="100sp"
+                android:autoSizeMinTextSize="12sp"
+                android:autoSizeStepGranularity="2sp"
+                android:autoSizeTextType="uniform"
+                android:text="@string/company_phone"
+                android:textColor="#033F63"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                tools:targetApi="o" />
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imageView2"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/dealicon"
+                app:civ_border_color="#fff"
+                app:civ_border_width="1dp" />
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_marginStart="68dp"
+                android:layout_marginTop="12dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/straightline"
+                android:layout_width="2dp"
+                android:layout_marginBottom="12dp"
+                />
+
+
+        </androidx.cardview.widget.CardView>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

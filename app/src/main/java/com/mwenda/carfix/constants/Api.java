@@ -4,8 +4,6 @@ import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
-import retrofit2.http.GET;
-import retrofit2.http.Header;
 import retrofit2.http.POST;
 
 public interface Api {
@@ -29,8 +27,13 @@ public interface Api {
             @Field("password") String password
     );
 
-    @GET("loan/lenders")
-    Call<ResponseBody> getLenderList(@Header("Authorization") String auth);
+    @FormUrlEncoded
+    @POST("alltowers.php")
+    Call<ResponseBody> getTowingCompanies(
+            @Field("search_query") String search_query
+    );
+
+
 
     @FormUrlEncoded
     @POST("auth/verify-otp")

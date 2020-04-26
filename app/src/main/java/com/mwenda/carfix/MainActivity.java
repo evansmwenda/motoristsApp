@@ -8,9 +8,9 @@ import android.view.View;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.mwenda.carfix.Accounts.LoginActivity;
-import com.mwenda.carfix.Accounts.RegisterActivity;
-import com.mwenda.carfix.Accounts.RegisterTowActivity;
+import com.mwenda.carfix.accounts.LoginActivity;
+import com.mwenda.carfix.accounts.RegisterActivity;
+import com.mwenda.carfix.accounts.RegisterTowActivity;
 
 public class MainActivity extends AppCompatActivity {
 

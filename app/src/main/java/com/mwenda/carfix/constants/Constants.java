@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
-import com.mwenda.carfix.Accounts.LoginActivity;
+import com.mwenda.carfix.accounts.LoginActivity;
 
 import java.util.regex.Pattern;
 
