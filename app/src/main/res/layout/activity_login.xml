@@ -63,7 +63,7 @@
         android:textColorHint="#033F63">
 
         <EditText
-            android:id="@+id/usrpass"
+            android:id="@+id/editPass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textStyle="bold"
@@ -84,6 +84,7 @@
         android:layout_height="70dp"
         android:layout_marginTop="20dp"
         android:text="LOGIN"
+        android:onClick="userLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/wrapper_password" />
