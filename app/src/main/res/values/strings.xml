@@ -21,4 +21,11 @@
     <string name="home_second">Home Second</string>
     <string name="company_name">Company Name</string>
     <string name="company_phone">Phone Number</string>
+    <string name="title_towing">Towing Services</string>
+    <string name="title_gas">Gas Stations</string>
+    <string name="title_hospital">Hospitals</string>
+    <string name="title_police">Police Stations</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

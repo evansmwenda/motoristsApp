@@ -1,16 +1,16 @@
-package com.mwenda.carfix.ui.slideshow;
+package com.mwenda.carfix.ui.gas;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class SlideshowViewModel extends ViewModel {
+public class GasStationsViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public SlideshowViewModel() {
+    public GasStationsViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is slideshow fragment");
+        mText.setValue("This is gas station fragment");
     }
 
     public LiveData<String> getText() {

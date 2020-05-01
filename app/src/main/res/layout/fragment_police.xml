@@ -4,10 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.slideshow.SlideshowFragment">
+    tools:context=".ui.police.PoliceStationsFragment">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recylcerViewPolice"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
     <TextView
-        android:id="@+id/text_slideshow"
+        android:id="@+id/text_notifications"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"

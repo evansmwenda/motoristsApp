@@ -1,4 +1,4 @@
-package com.mwenda.carfix.ui.home;
+package com.mwenda.carfix.ui.hospitals;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -35,22 +35,21 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class HomeFragment extends Fragment {
+public class HospitalsFragment extends Fragment {
 
-    private HomeViewModel homeViewModel;
+    private HospitalsViewModel hospitalsViewModel;
     RecyclerView recyclerView;
-    private SweetAlertDialog loadingDialog,errorDialog;
-    private String user_id,email_address,phone_number,role,company_name;
+    private SweetAlertDialog loadingDialog, errorDialog;
+    private String user_id, email_address, phone_number, role, company_name;
     List<User> userList;
-
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                ViewModelProviders.of(this).get(HomeViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_home, container, false);
-        final TextView textView = root.findViewById(R.id.text_home);
-        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        hospitalsViewModel =
+                ViewModelProviders.of(this).get(HospitalsViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_hospitals, container, false);
+        final TextView textView = root.findViewById(R.id.text_dashboard);
+        hospitalsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
@@ -58,9 +57,10 @@ public class HomeFragment extends Fragment {
         });
 
         //getting the recyclerview from xml
-        recyclerView = root.findViewById(R.id.recylcerViewHome);
+        recyclerView = root.findViewById(R.id.recylcerViewHosp);
         loadingDialog = new SweetAlertDialog(getContext(), SweetAlertDialog.PROGRESS_TYPE);
         errorDialog = new SweetAlertDialog(getContext(), SweetAlertDialog.ERROR_TYPE);
+
 
         return root;
     }
@@ -75,6 +75,7 @@ public class HomeFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         userList = new ArrayList<>();
+
     }
 
     public  void getTowers(final String search_query){
@@ -154,4 +155,5 @@ public class HomeFragment extends Fragment {
             }
         });
     }
+
 }
