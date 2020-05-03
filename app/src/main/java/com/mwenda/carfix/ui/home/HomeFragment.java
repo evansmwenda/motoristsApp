@@ -1,5 +1,6 @@
 package com.mwenda.carfix.ui.home;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -35,13 +36,16 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static android.content.Context.MODE_PRIVATE;
+
 public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
     RecyclerView recyclerView;
     private SweetAlertDialog loadingDialog,errorDialog;
-    private String user_id,email_address,phone_number,role,company_name;
+    private String user_id,email_address,phone_number,role,company_name,lat,lon;
     List<User> userList;
+    SharedPreferences sp ;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -56,6 +60,13 @@ public class HomeFragment extends Fragment {
                 textView.setText(s);
             }
         });
+
+        sp=getContext().getSharedPreferences("carfix",MODE_PRIVATE);
+
+        lat = sp.getString("lat","0");
+        lon = sp.getString("lon","0");
+
+        //Toast.makeText(getContext(), "latte->"+lat+"\nloone->"+lon, Toast.LENGTH_SHORT).show();
 
         //getting the recyclerview from xml
         recyclerView = root.findViewById(R.id.recylcerViewHome);
@@ -95,7 +106,7 @@ public class HomeFragment extends Fragment {
         Call<ResponseBody> call = RetrofitClient
                 .getInstance()
                 .getApi()
-                .getTowingCompanies(search_query);
+                .getTowersInRadius(lat,lon);
 
         call.enqueue(new Callback<ResponseBody>() {
             @Override

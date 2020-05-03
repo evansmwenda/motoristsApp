@@ -33,6 +33,13 @@ public interface Api {
             @Field("search_query") String search_query
     );
 
+    @FormUrlEncoded
+    @POST("mytowers.php")
+    Call<ResponseBody> getTowersInRadius(
+            @Field("lat") String lat,
+            @Field("lng") String lng
+    );
+
 
 
     @FormUrlEncoded
