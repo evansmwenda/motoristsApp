@@ -3,7 +3,6 @@ package com.mwenda.carfix.adapters;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,7 +40,7 @@ public class TowingCompanyAdapter extends RecyclerView.Adapter<TowingCompanyAdap
         userModel = userModelList.get(position);
 
         holder.tvcompany_name.setText(userModel.getCompany_name());
-        holder.tvcompany_phone.setText(userModel.getPhone_number());
+        holder.tvcompany_distance.setText(String.format("%s miles away",userModel.getDistance().substring(0,3)));
         holder.cardTowing.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,14 +56,14 @@ public class TowingCompanyAdapter extends RecyclerView.Adapter<TowingCompanyAdap
     }
 
     class TowingViewHolder extends RecyclerView.ViewHolder{
-        TextView tvcompany_name,tvcompany_phone;
+        TextView tvcompany_name,tvcompany_distance;
         CardView cardTowing;
 
         public TowingViewHolder(View itemView){
             super(itemView);
 
             tvcompany_name = itemView.findViewById(R.id.tvcompany_name);
-            tvcompany_phone = itemView.findViewById(R.id.tvcompany_phone);
+            tvcompany_distance = itemView.findViewById(R.id.tvcompany_distance);
             cardTowing = itemView.findViewById(R.id.cardTowing);
         }
     }

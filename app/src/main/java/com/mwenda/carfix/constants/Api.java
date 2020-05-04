@@ -33,9 +33,15 @@ public interface Api {
             @Field("search_query") String search_query
     );
 
+
+    //gets all towing companies, hospitals,police stations,gas stations
+    //based on the role supplied that are nearest to motorist
+    //roles can be 1-4 : 1->normal users
+    //2->towing stations 3->gas stations 4->hospitals 5->police stations
     @FormUrlEncoded
-    @POST("mytowers.php")
-    Call<ResponseBody> getTowersInRadius(
+    @POST("myresources.php")
+    Call<ResponseBody> getResourcesInRadius(
+            @Field("role") String role,
             @Field("lat") String lat,
             @Field("lng") String lng
     );

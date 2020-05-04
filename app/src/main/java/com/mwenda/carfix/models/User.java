@@ -6,13 +6,15 @@ public class User {
     private String email_address;
     private String phone_number;
     private String company_name;
+    private String distance;
 
 
-    public User(String id, String email_address, String phone_number, String company_name) {
+    public User(String id, String email_address, String phone_number, String company_name,String distance) {
         this.id = id;
         this.email_address = email_address;
         this.phone_number = phone_number;
         this.company_name = company_name;
+        this.distance = distance;
     }
 
     public String getId() {
@@ -45,5 +47,13 @@ public class User {
 
     public void setCompany_name(String company_name) {
         this.company_name = company_name;
+    }
+
+    public String getDistance() {
+        return distance;
+    }
+
+    public void setDistance(String distance) {
+        this.distance = distance;
     }
 }

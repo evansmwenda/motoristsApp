@@ -43,7 +43,7 @@ public class HomeFragment extends Fragment {
     private HomeViewModel homeViewModel;
     RecyclerView recyclerView;
     private SweetAlertDialog loadingDialog,errorDialog;
-    private String user_id,email_address,phone_number,role,company_name,lat,lon;
+    private String user_id,email_address,phone_number,distance,company_name,lat,lon;
     List<User> userList;
     SharedPreferences sp ;
 
@@ -102,11 +102,12 @@ public class HomeFragment extends Fragment {
         loadingDialog.show();
 
         errorDialog= new SweetAlertDialog(getContext(), SweetAlertDialog.ERROR_TYPE);
+        String role = "2";
 
         Call<ResponseBody> call = RetrofitClient
                 .getInstance()
                 .getApi()
-                .getTowersInRadius(lat,lon);
+                .getResourcesInRadius(role,lat,lon);
 
         call.enqueue(new Callback<ResponseBody>() {
             @Override
@@ -130,12 +131,14 @@ public class HomeFragment extends Fragment {
                                 email_address=jsonObjectData.optString("email_address");
                                 phone_number=jsonObjectData.optString("phone_number");
                                 company_name=jsonObjectData.optString("company_name");
+                                distance=jsonObjectData.optString("distance");
 
                                 userList.add(new User(
                                         user_id,
                                         email_address,
                                         phone_number,
-                                        company_name
+                                        company_name,
+                                        distance
                                 ));
 
                             }

@@ -1,5 +1,6 @@
 package com.mwenda.carfix.ui.police;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -35,13 +36,16 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static android.content.Context.MODE_PRIVATE;
+
 public class PoliceStationsFragment extends Fragment {
 
     private PoliceStationsViewModel policeStationsViewModel;
     RecyclerView recyclerView;
     private SweetAlertDialog loadingDialog, errorDialog;
-    private String user_id, email_address, phone_number, role, company_name;
+    private String user_id, email_address, phone_number, distance, company_name,lat,lon;
     List<User> userList;
+    SharedPreferences sp ;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -55,6 +59,11 @@ public class PoliceStationsFragment extends Fragment {
                 textView.setText(s);
             }
         });
+
+        sp=getContext().getSharedPreferences("carfix",MODE_PRIVATE);
+
+        lat = sp.getString("lat","0");
+        lon = sp.getString("lon","0");
 
         //getting the recyclerview from xml
         recyclerView = root.findViewById(R.id.recylcerViewPolice);
@@ -91,11 +100,12 @@ public class PoliceStationsFragment extends Fragment {
         loadingDialog.show();
 
         errorDialog= new SweetAlertDialog(getContext(), SweetAlertDialog.ERROR_TYPE);
+        String role = "5";
 
         Call<ResponseBody> call = RetrofitClient
                 .getInstance()
                 .getApi()
-                .getTowingCompanies(search_query);
+                .getResourcesInRadius(role,lat,lon);
 
         call.enqueue(new Callback<ResponseBody>() {
             @Override
@@ -119,12 +129,14 @@ public class PoliceStationsFragment extends Fragment {
                                 email_address=jsonObjectData.optString("email_address");
                                 phone_number=jsonObjectData.optString("phone_number");
                                 company_name=jsonObjectData.optString("company_name");
+                                distance=jsonObjectData.optString("distance");
 
                                 userList.add(new User(
                                         user_id,
                                         email_address,
                                         phone_number,
-                                        company_name
+                                        company_name,
+                                        distance
                                 ));
 
                             }
