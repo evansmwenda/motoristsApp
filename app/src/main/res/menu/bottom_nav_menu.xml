@@ -3,21 +3,21 @@
 
     <item
         android:id="@+id/navigation_home"
-        android:icon="@drawable/ic_home_black_24dp"
+        android:icon="@drawable/ic_towing"
         android:title="@string/title_towing" />
     <item
     android:id="@+id/navigation_gasstations"
-    android:icon="@drawable/ic_menu_camera"
+    android:icon="@drawable/ic_local_gas"
     android:title="@string/title_gas" />
 
     <item
         android:id="@+id/navigation_hospital"
-        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:icon="@drawable/ic_local_hospital"
         android:title="@string/title_hospital" />
 
     <item
         android:id="@+id/navigation_policestations"
-        android:icon="@drawable/ic_notifications_black_24dp"
+        android:icon="@drawable/ic_local_police"
         android:title="@string/title_police" />
 
 </menu>
