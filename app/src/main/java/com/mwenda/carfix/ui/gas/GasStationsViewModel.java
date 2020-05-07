@@ -10,7 +10,7 @@ public class GasStationsViewModel extends ViewModel {
 
     public GasStationsViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is gas station fragment");
+        //mText.setValue("This is gas station fragment");
     }
 
     public LiveData<String> getText() {

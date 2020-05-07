@@ -10,7 +10,7 @@ public class PoliceStationsViewModel extends ViewModel {
 
     public PoliceStationsViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is police stations fragment");
+        //mText.setValue("This is police stations fragment");
     }
 
     public LiveData<String> getText() {
