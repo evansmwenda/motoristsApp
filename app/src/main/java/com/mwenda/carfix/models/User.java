@@ -7,14 +7,16 @@ public class User {
     private String phone_number;
     private String company_name;
     private String distance;
+    private String image;
 
 
-    public User(String id, String email_address, String phone_number, String company_name,String distance) {
+    public User(String id, String email_address, String phone_number, String company_name,String distance,String image) {
         this.id = id;
         this.email_address = email_address;
         this.phone_number = phone_number;
         this.company_name = company_name;
         this.distance = distance;
+        this.image = image;
     }
 
     public String getId() {
@@ -55,5 +57,13 @@ public class User {
 
     public void setDistance(String distance) {
         this.distance = distance;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

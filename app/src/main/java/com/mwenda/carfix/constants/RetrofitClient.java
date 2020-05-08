@@ -9,7 +9,7 @@ public class RetrofitClient {
 
 //    private static final String BASE_URL = "https://skytoptrial.000webhostapp.com/functions/";
 
-    private static final String BASE_URL = "http://jadapay.000webhostapp.com/carfix/functions/User/";
+    public static final String BASE_URL = "http://jadapay.000webhostapp.com/carfix/functions/User/";
 
     SharedPreferences sp;
 

@@ -43,7 +43,7 @@ public class HospitalsFragment extends Fragment {
     private HospitalsViewModel hospitalsViewModel;
     RecyclerView recyclerView;
     private SweetAlertDialog loadingDialog, errorDialog;
-    private String user_id, email_address, phone_number, distance, company_name,lat,lon;
+    private String user_id, email_address, phone_number, distance, company_name,lat,lon,image;
     List<User> userList;
     SharedPreferences sp ;
 
@@ -132,13 +132,15 @@ public class HospitalsFragment extends Fragment {
                                 phone_number=jsonObjectData.optString("phone_number");
                                 company_name=jsonObjectData.optString("company_name");
                                 distance=jsonObjectData.optString("distance");
+                                image=jsonObjectData.optString("image");
 
                                 userList.add(new User(
                                         user_id,
                                         email_address,
                                         phone_number,
                                         company_name,
-                                        distance
+                                        distance,
+                                        image
                                 ));
 
                             }

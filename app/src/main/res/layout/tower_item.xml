@@ -73,7 +73,7 @@
 
 
                 <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/imageView2"
+                    android:id="@+id/imgIcon"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_marginStart="10dp"
@@ -92,7 +92,7 @@
                     android:layout_marginStart="5dp"
                     android:src="@drawable/straightline"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/imageView2"
+                    app:layout_constraintStart_toEndOf="@+id/imgIcon"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
