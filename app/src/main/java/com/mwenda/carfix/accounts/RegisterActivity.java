@@ -143,7 +143,7 @@ public class RegisterActivity extends AppCompatActivity {
                     //user will receive otp
                     try {
                         JSONObject jsonObjectReply = new JSONObject(response.body().string());
-                        Log.d("defcon", "onResponse: "+jsonObjectReply.toString());
+
                         boolean status = jsonObjectReply.optBoolean("success",false);
                         Log.d("defcon", "onResponse: status->"+status);
 
